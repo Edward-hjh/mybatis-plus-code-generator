@@ -1,0 +1,45 @@
+# mybatis-plus提供的配置
+generator:
+  global-config:
+    open: false
+    swagger2: true
+    file-override: true
+    outputDir: ${user.dir}/generator
+    author: hejh
+  data-source-config:
+    driver-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.2.241:3306/user-service?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+#    username: root
+#    password: Admin123456
+#   url: jdbc:mysql://175.178.110.5:3306/translate?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+#   username: translate
+#   password: zEx3sFfGkWeWdeGA
+    url: jdbc:mysql://192.168.3.249:3306/console-service?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password:  X7aYn7OCc9Ck
+    schema-name: translate
+  package-config:
+    parent: com.hejh.console
+    path-info:
+      form: test1
+  strategy-config:
+    table-prefix: t_
+    naming: underline_to_camel
+    column-naming: underline_to_camel
+    super-entity-class: com.baomidou.ant.common.BaseEntity
+    super-controller-class: cn.wujw999.jxcj.common.controller.BaseController
+    #super-entity-columns: id, name
+    include: t_console_audit_version_config
+    controller-mapping-hyphen-style: true
+    entity-lombok-model: true
+    rest-controller-style: true
+---
+# 日志
+logging:
+  level:
+    root: error
+    com:
+      baomidou:
+        mybatisplus:
+          generator: debug
+
